@@ -2,16 +2,18 @@
 #include "Config.h"
 #include "Logger.h"
 
-extern Logger g_Logger;
-extern Config g_Config;
+//extern Logger g_Logger;
+//extern Config g_Config;
 
 _getaddrinfo getaddrinfo_orig;
 
-const std::vector<std::string_view> blockList = { "google", "doubleclick", "qualaroo.com"/*, "fbsbx.com"*/ };
+const std::vector<std::string_view> blockList = { "google", "doubleclick", "qualaroo.com", "fbsbx.com" };
 
 // check if ads hostname
-bool is_blockhost (std::string_view nodename) {
-	static bool wpad = g_Config.getConfig ("Skip_wpad");
+bool is_blockhost (std::string_view nodename, Config* config) {
+
+	
+	static bool wpad = config->getConfig ("Skip_wpad");
 	if (0 == nodename.compare ("wpad"))
 		return wpad ? true : false;
 	for (auto i : blockList) {
@@ -27,11 +29,14 @@ int WSAAPI getaddrinfo_hook (
 	_In_opt_	const ADDRINFOA* hints,
 	_Out_		PADDRINFOA* res)
 {
+	static auto* config = new Config ();
+	static auto* logger = new Logger (config);
 	if (nodename == nullptr)
 		return getaddrinfo_orig (nodename, servname, hints, res);
 
 	std::string nnodename (nodename);
-	auto isblock = std::async (std::launch::async, is_blockhost, nnodename);
+	
+	auto isblock = std::async (std::launch::async, is_blockhost, nnodename, config);
 	auto result = getaddrinfo_orig (nodename, servname, hints, res);
 	if (0 == result) {
 		if (isblock.get ()) {
@@ -39,10 +44,10 @@ int WSAAPI getaddrinfo_hook (
 				auto ipv4 = reinterpret_cast<sockaddr_in*>(ptr->ai_addr);
 				ipv4->sin_addr.S_un.S_addr = INADDR_ANY;
 			}
-			g_Logger.Log ("blocked - " + nnodename);
+			logger->Log ("blocked - " + nnodename);
 		}
 		else {
-			g_Logger.Log ("allowed - " + nnodename);
+			logger->Log ("allowed - " + nnodename);
 		}
 	}
 	return result;

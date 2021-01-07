@@ -4,22 +4,22 @@
 #include <string>
 #include "Config.h"
 
-extern Config g_Config;
 class Logger {
 
 public:
+	Logger (Config* config) {
+		
+		m_isEnable = config->getConfig ("Log");
+		if (m_isEnable) {
+			m_log.open ("blockthespot_log.txt", std::ios::out | std::ios::app);
+			m_log << "BlockTheSpot - Build date: " << __TIMESTAMP__ << std::endl;
+		}
+	}
+
 	~Logger () {
 		if (m_isEnable) {
 			m_log.flush ();
 			m_log.close ();
-		}
-	}
-	void setLogfile (std::string_view logFile) {
-		m_filename = logFile;
-		m_isEnable = g_Config.getConfig ("Log");
-		if (m_isEnable) {
-			m_log.open (m_filename, std::ios::out | std::ios::app);
-			m_log << "BlockTheSpot - Build date: " << __TIMESTAMP__ << std::endl;
 		}
 	}
 
@@ -29,8 +29,7 @@ public:
 	}
 
 private:
-	std::string m_filename;
-	bool m_isEnable;
+	bool m_isEnable = false;
 	std::ofstream m_log;
 
 };

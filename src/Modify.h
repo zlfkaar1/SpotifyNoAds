@@ -2,4 +2,4 @@
 #include "stdafx.h"
 
 
-DWORD WINAPI KillBanner (LPVOID);
+DWORD WINAPI KillBanner (LPVOID config);

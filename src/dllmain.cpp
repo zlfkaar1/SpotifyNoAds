@@ -6,10 +6,6 @@
 #include "Modify.h"
 
 extern _getaddrinfo getaddrinfo_orig;
-Logger g_Logger;
-Config g_Config;
-
-
 
 BOOL APIENTRY DllMain (HMODULE hModule,
 					   DWORD  ul_reason_for_call, LPVOID lpReserved)
@@ -21,22 +17,25 @@ BOOL APIENTRY DllMain (HMODULE hModule,
 		switch (ul_reason_for_call)
 		{
 		case DLL_PROCESS_ATTACH:
-			if (std::string_view::npos == procname.find ("--type=") && false == g_Config.getConfig("Block_BannerOnly")) {
+			auto* config = new Config();
+			if (std::string_view::npos == procname.find ("--type=") && false == config->getConfig("Block_BannerOnly")) {
 				// block ads request - main process
-				CreateThread (NULL, NULL, KillBanner, NULL, 0, NULL);
-				g_Logger.setLogfile ("main_log.txt");
+				CreateThread (NULL, NULL, KillBanner, config, 0, NULL);
+				//g_Logger.setLogfile ("main_log.txt");
 			}
 			else if (std::string_view::npos != procname.find ("--type=utility")) {
 				// block ads banner by hostname - utility process
-				g_Logger.setLogfile ("utility_log.txt");
+				//g_Logger.setLogfile ("utility_log.txt");
+				auto* log = new Logger (config);
 				getaddrinfo_orig = getaddrinfo;
 				if (getaddrinfo_orig) {
 					Mhook_SetHook ((PVOID*)&getaddrinfo_orig, getaddrinfo_hook);
-					g_Logger.Log ("Mhook_SetHook - getaddrinfo success!");
+					log->Log ("Mhook_SetHook - getaddrinfo success!");
 				}
 				else {
-					g_Logger.Log ("Mhook_SetHook - getaddrinfo failed!");
+					log->Log ("Mhook_SetHook - getaddrinfo failed!");
 				}
+				log->~Logger ();
 			}
 			break;
 		}
