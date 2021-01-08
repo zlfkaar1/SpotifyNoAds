@@ -51,10 +51,24 @@ DWORD WINAPI KillBanner (LPVOID conf)
 			VirtualProtect ((char*)skipPod + 6, 1, PAGE_EXECUTE_READWRITE, &oldProtect);
 			memset ((char*)skipPod + 6, 0xE9, 1);
 			VirtualProtect ((char*)skipPod + 6, 1, oldProtect, &oldProtect);
-			logger->Log ("main process - patch success!");
+			logger->Log ("main process - #1patch success!");
 		}
 		else {
-			logger->Log ("main process - patch failed!");
+			logger->Log ("main process - #1patch failed!");
+		}
+
+		skipPod = FindPattern ((uint8_t*)hModule, mInfo.SizeOfImage, (BYTE*)"\x00\x61\x64\x70\x6F\x64\x00", "xxxxxxx");
+		if (skipPod)
+		{
+			DWORD oldProtect;
+			VirtualProtect ((char*)skipPod + 5, 1, PAGE_EXECUTE_READWRITE, &oldProtect);
+			memset ((char*)skipPod + 5, 0x90, 1);
+			VirtualProtect ((char*)skipPod + 5, 1, oldProtect, &oldProtect);
+
+			logger->Log ("main process - #2patch success!");
+		}
+		else {
+			logger->Log ("main process - #2patch failed!");
 		}
 
 	} 

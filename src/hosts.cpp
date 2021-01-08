@@ -7,7 +7,7 @@
 
 _getaddrinfo getaddrinfo_orig;
 
-const std::vector<std::string_view> blockList = { "google", "doubleclick", "qualaroo.com", "fbsbx.com" };
+const std::vector<std::string_view> blockList = { "google", "doubleclick", "qualaroo.com", "fbsbx.com", "adeventtracker" };
 
 // check if ads hostname
 bool is_blockhost (std::string_view nodename, Config* config) {
