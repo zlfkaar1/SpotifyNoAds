@@ -2,10 +2,10 @@
 
 <center>
     <h3 align="center"><a href=https://en.wikipedia.org/wiki/2020_Thai_protests>Support the 2020 Thai protests</a></h3>
-    <h3 align="center">Help me stop the dictatorship!</h3>
-    <h3 align="center"><a href="https://twitter.com/search?q=%23whatishappeninginthailand">#WhatIsHappeningInThailand</a></h3>
-    <h3 align="center"><a href="https://twitter.com/search?q=%23whatshappeninginindonesia">#WhatsHappeninginIndonesia</a></h3>
-    <h3 align="center"><a href="https://twitter.com/search?q=%23whatshappeninginphilippines">#WhatsHappeningInPhilippines</a></h3>
+    <h3 align="center">Help me stop the dictatorship in Thailand and Myanmar!</h3>
+    <h3 align="center">#CivilDisobedienceMovement</h3>
+    <h3 align="center">#JusticeForMyanmar</h3>
+    <h3 align="center">#Save_Myanmar</h3>
     <h3 align="center">Southeast Asia strong together!</h3>
 </center>
 
@@ -50,9 +50,4 @@ or
 * For Spotify Premium users, setting `Block_BannerOnly = 1` will only block the banner at home
 * If the automatic install/uninstall scripts do not work, please contact [rednek46](https://github.com/rednek46)
 
-#### Update on protests:
 
-<p align="center"><b>ki</b>ng<b>ller<b/></p>
-<p align="center">
-    <img src="JUNTA.jpg" width="600">
-</p>
