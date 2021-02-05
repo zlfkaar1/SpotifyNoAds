@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/31l6ynm0a1fhr2vs/branch/master?svg=true)](https://ci.appveyor.com/project/mrpond/blockthespot/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/31l6ynm0a1fhr2vs/branch/master?svg=true)](https://ci.appveyor.com/project/mrpond/blockthespot/branch/master)  [![Discord](https://discord.com/api/guilds/807273906872123412/widget.png)](https://discord.gg/p43cusgUPm)
 
 <center>
     <h3 align="center"><a href=https://en.wikipedia.org/wiki/2020_Thai_protests>Support the 2020 Thai protests</a></h3>
@@ -49,5 +49,6 @@ or
     * Setting `Skip_wpad = 1` in config.ini may help
 * For Spotify Premium users, setting `Block_BannerOnly = 1` will only block the banner at home
 * If the automatic install/uninstall scripts do not work, please contact [rednek46](https://github.com/rednek46)
+* For more support and discussions, Join our [Discord Server](https://discord.gg/p43cusgUPm) 
 
 
