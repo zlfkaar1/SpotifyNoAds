@@ -75,7 +75,7 @@ try {
 try {
   $webClient.DownloadFile(
     # Remote file URL
-    'https://github.com/mrpond/BlockTheSpot/files/5767943/zlink.zip',
+    'https://github.com/mrpond/BlockTheSpot/files/5969916/zlink.zip',
     # Local file path
     "$PWD\zlink.zip"
   )
