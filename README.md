@@ -3,7 +3,7 @@
 <center>
     <h3 align="center"><a href="https://en.wikipedia.org/wiki/2020_Thai_protests">Support the 2020 Thai protests</a></h3>
     <h3 align="center">#WhatsHappeningInThailand</h3>
-    <h3 align="center"><a href="https://twitter.com/hashtag/#ม็อบ13กุมภา">#ม็อบ13กุมภา</a></h3>
+    <h3 align="center"><a href="https://twitter.com/search?q=%23ม็อบ13กุมภา">#ม็อบ13กุมภา</a></h3>
     <h3 align="center">Help me stop the dictatorship in Thailand and Myanmar!</h3>
     <h3 align="center">#CivilDisobedienceMovement</h3>
     <h3 align="center">#JusticeForMyanmar</h3>
