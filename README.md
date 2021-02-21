@@ -46,6 +46,11 @@ or
 or
 * Reinstall Spotify 
 
+#### Known Issues:  
+* BlockTheSpot will have issues blocking ads on the alpha version of Spotify. To identify this, Look into Spotify version and see if there is `-a` in the end. If so, you have an Alpha Version of Spotify. To go back and use BlockTheSpot perfectly on normal Spotify, [Click here](http://download.spotify.com/SpotifyFullSetup.exe) to download the Latest Spotify Full Setup.  
+* Optional Feature "Remove Upgrade Button" will not work with Spicetify, also might have issues with alpha Spotify.  
+* It will also have issues with latest Spotify where the user Avatar will be blank.   
+
 #### Note:
 * "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, make sure to replace it after an update
 * The ad banner may appear if your network uses [Web Proxy Auto-Discovery Protocol](https://en.wikipedia.org/wiki/Web_Proxy_Auto-Discovery_Protocol)
