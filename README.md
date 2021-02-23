@@ -52,7 +52,8 @@ or
 * It will also have issues with latest Spotify where the user Avatar will be blank.   
 
 #### Note:
-* "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, make sure to replace it after an update
+* "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, make sure to replace it after an update.  
+* Spicetify users have to reapply BlockTheSpot after applying a Spicetify theme.  
 * The ad banner may appear if your network uses [Web Proxy Auto-Discovery Protocol](https://en.wikipedia.org/wiki/Web_Proxy_Auto-Discovery_Protocol)
     * Setting `Skip_wpad = 1` in config.ini may help
 * For Spotify Premium users, setting `Block_BannerOnly = 1` will only block the banner at home
