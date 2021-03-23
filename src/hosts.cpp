@@ -7,16 +7,14 @@
 
 _getaddrinfo getaddrinfo_orig;
 
-const std::vector<std::string_view> blockList = { "google", "doubleclick", "qualaroo.com", "fbsbx.com", "adeventtracker" };
-
 // check if ads hostname
 bool is_blockhost (std::string_view nodename, Config* config) {
-
-	
 	static bool wpad = config->getConfig ("Skip_wpad");
+	static const std::vector<std::string_view> blockList = { "google", "doubleclick", "qualaroo.com", "fbsbx.com", /*"cloudflare"*/ };
+	
 	if (0 == nodename.compare ("wpad"))
 		return wpad ? true : false;
-	for (auto i : blockList) {
+	for (auto &i : blockList) {
 		if (std::string_view::npos != nodename.find (i))
 			return true;
 	}
@@ -31,6 +29,8 @@ int WSAAPI getaddrinfo_hook (
 {
 	static auto* config = new Config ();
 	static auto* logger = new Logger (config);
+	static const std::vector<std::string_view> dnscheck = { "dns.google", "cloudflare" };
+
 	if (nodename == nullptr)
 		return getaddrinfo_orig (nodename, servname, hints, res);
 
@@ -48,6 +48,15 @@ int WSAAPI getaddrinfo_hook (
 		}
 		else {
 			logger->Log ("allowed - " + nnodename);
+		}
+	}
+	if (true == logger->is_active() &&
+		true == config->getConfig ("Skip_wpad"))
+	{
+		for (auto& i : dnscheck) {
+			if (std::string_view::npos != nnodename.find (i))
+				logger->Log ("custom dns currently in use - " + nnodename +
+							 " turn on Skip_wpad in config.ini or switch to adguard dns");
 		}
 	}
 	return result;
