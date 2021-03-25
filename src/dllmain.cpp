@@ -17,7 +17,7 @@ BOOL APIENTRY DllMain (HMODULE hModule,
 		switch (ul_reason_for_call)
 		{
 		case DLL_PROCESS_ATTACH:
-			auto* config = new Config();
+			auto *config = new Config();
 			if (std::string_view::npos == procname.find ("--type=") && false == config->getConfig("Block_BannerOnly")) {
 				// block ads request - main process
 				CreateThread (NULL, NULL, KillBanner, config, 0, NULL);
@@ -26,7 +26,7 @@ BOOL APIENTRY DllMain (HMODULE hModule,
 			else if (std::string_view::npos != procname.find ("--type=utility")) {
 				// block ads banner by hostname - utility process
 				//g_Logger.setLogfile ("utility_log.txt");
-				auto* log = new Logger (config);
+				auto *log = new Logger (config);
 				getaddrinfo_orig = getaddrinfo;
 				if (getaddrinfo_orig) {
 					Mhook_SetHook ((PVOID*)&getaddrinfo_orig, getaddrinfo_hook);

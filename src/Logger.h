@@ -1,5 +1,4 @@
 #pragma once
-#include "stdafx.h"
 #include <fstream>
 #include <string>
 #include "Config.h"
@@ -12,7 +11,7 @@ public:
 		m_active = config->getConfig ("Log");
 		if (m_active) {
 			m_log.open ("blockthespot_log.txt", std::ios::out | std::ios::app);
-			m_log << "BlockTheSpot - Build date: " << __TIMESTAMP__ << std::endl;
+			//m_log << "BlockTheSpot - Build date: " << __TIMESTAMP__ << std::endl;
 		}
 	}
 
