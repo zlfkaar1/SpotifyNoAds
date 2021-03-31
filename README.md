@@ -30,6 +30,7 @@
 
 #### Installation/Update:
 * Just download and run [BlockTheSpot.bat](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/mrpond/BlockTheSpot/blob/master/BlockTheSpot.bat)
+* Enter 'Y' when promoted to swap Alpha UI to Old UI if needed.
 or
 1. Browse to your Spotify installation folder `%APPDATA%\Spotify`
 2. Download `chrome_elf.zip` from [releases](https://github.com/mrpond/BlockTheSpot/releases)
