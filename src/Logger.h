@@ -28,7 +28,7 @@ public:
 
 	void Log (std::string_view log) {
 		if (m_active)
-			m_log << log << std::endl;
+			m_log << log << '\n';
 	}
 
 private:
