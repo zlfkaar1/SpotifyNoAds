@@ -42,7 +42,7 @@ or
 * Reinstall Spotify 
 
 #### Known Issues:  
-* You may face issue (#150)[https://github.com/mrpond/BlockTheSpot/issues/150].    
+* You may face issue [#150](https://github.com/mrpond/BlockTheSpot/issues/150).    
 
 #### Note:
 * "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, make sure to replace it after an update.  
