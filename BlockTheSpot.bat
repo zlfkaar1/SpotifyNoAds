@@ -72,6 +72,7 @@ try {
   Write-Output $_
   Sleep
 }
+<#
 try {
   $webClient.DownloadFile(
     # Remote file URL
@@ -94,13 +95,15 @@ try {
   Write-Output $_
   Sleep
 }
+#>
 Expand-Archive -Force -LiteralPath "$PWD\chrome_elf.zip" -DestinationPath $PWD
 Remove-Item -LiteralPath "$PWD\chrome_elf.zip"
+<#
 Expand-Archive -Force -LiteralPath "$PWD\zlink.zip" -DestinationPath $PWD
 Remove-Item -LiteralPath "$PWD\zlink.zip"
 Expand-Archive -Force -LiteralPath "$PWD\xpui.zip" -DestinationPath $PWD
 Remove-Item -LiteralPath "$PWD\xpui.zip"
-
+#>
 $spotifyInstalled = (Test-Path -LiteralPath $SpotifyExecutable)
 if (-not $spotifyInstalled) {
   Write-Host @'
@@ -140,7 +143,7 @@ $patchFiles = "$PWD\chrome_elf.dll", "$PWD\config.ini"
 $remup = "$PWD\zlink.spa"
 $uipat = "$PWD\xpui.spa"
 Copy-Item -LiteralPath $patchFiles -Destination "$SpotifyDirectory"
-
+<#
 $ch = Read-Host -Prompt "Optional - Remove Upgrade Button. (Y/N) "
 if ($ch -eq 'y'){
     move $SpotifyApps\zlink.spa $SpotifyApps\zlink.spa.bak >$null 2>&1
@@ -160,7 +163,7 @@ if ($ch -eq 'y'){
 UI isn't changed.
 '@`n
 }
-
+#>
 
 $tempDirectory = $PWD
 Pop-Location

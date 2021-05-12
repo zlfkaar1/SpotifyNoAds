@@ -30,8 +30,7 @@
 :warning: This mod is for the [**Desktop Application**](https://www.spotify.com/download/windows/) of Spotify on Windows only and **not the Microsoft Store version**.
 
 #### Installation/Update:
-* Just download and run [BlockTheSpot.bat](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/mrpond/BlockTheSpot/blob/master/BlockTheSpot.bat)
-* Enter 'Y' when promoted to swap Alpha UI to Old UI if needed.
+* Just download and run [BlockTheSpot.bat](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/mrpond/BlockTheSpot/blob/master/BlockTheSpot.bat)  
 or
 1. Browse to your Spotify installation folder `%APPDATA%\Spotify`
 2. Download `chrome_elf.zip` from [releases](https://github.com/mrpond/BlockTheSpot/releases)
@@ -43,8 +42,7 @@ or
 * Reinstall Spotify 
 
 #### Known Issues:  
-* Optional feature "Remove Upgrade Button" will not work with Spicetify, also might have issues with alpha Spotify.  
-* It will also have issues with the latest Spotify version where the user avatar will be blank, Check [#83](https://github.com/mrpond/BlockTheSpot/issues/83) for more info.   
+* You may face issue #150 .  
 
 #### Note:
 * "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, make sure to replace it after an update.  
