@@ -3,6 +3,7 @@
 ;;;===,,,PowerShell.exe -ExecutionPolicy Bypass -Command "& '%~dp0ps.ps1'"
 ;;;===,,,del /s /q "%~dp0ps.ps1" >NUL 2>&1
 ;;;===,,,pause
+;;;===,,,exit
 # Ignore errors from `Stop-Process`
 $PSDefaultParameterValues['Stop-Process:ErrorAction'] = 'SilentlyContinue'
 
