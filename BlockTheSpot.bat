@@ -140,8 +140,10 @@ if (!(test-path $SpotifyDirectory/chrome_elf.dll.bak)){
 
 Write-Host 'Patching Spotify...'
 $patchFiles = "$PWD\chrome_elf.dll", "$PWD\config.ini"
+<#
 $remup = "$PWD\zlink.spa"
 $uipat = "$PWD\xpui.spa"
+#>
 Copy-Item -LiteralPath $patchFiles -Destination "$SpotifyDirectory"
 <#
 $ch = Read-Host -Prompt "Optional - Remove Upgrade Button. (Y/N) "
