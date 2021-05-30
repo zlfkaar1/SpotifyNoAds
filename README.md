@@ -50,7 +50,7 @@ or
 * The ad banner may appear if your network uses [Web Proxy Auto-Discovery Protocol](https://en.wikipedia.org/wiki/Web_Proxy_Auto-Discovery_Protocol)
     * Setting `Skip_wpad = 1` in config.ini may help
 * For Spotify Premium users, setting `Block_BannerOnly = 1` will only block the banner at home
-* If the automatic install/uninstall scripts do not work, please contact [rednek46](https://github.com/rednek46)
+* If the automatic install/uninstall scripts do not work, please contact [Nuzair46](https://github.com/Nuzair46)
 * For more support and discussions, join our [Discord server](https://discord.gg/p43cusgUPm) 
 
 
