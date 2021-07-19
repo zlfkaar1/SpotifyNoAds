@@ -44,7 +44,8 @@ or
 #### Known Issues:  
 * You may face issue [#150](https://github.com/mrpond/BlockTheSpot/issues/150).    
 
-#### Note:
+#### Note:  
+* BlockTheSpot only works as expected with the last tested version. Please check it before opening an issue.  
 * "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, make sure to replace it after an update.  
 * Spicetify users have to reapply BlockTheSpot after applying a Spicetify theme.  
 * The ad banner may appear if your network uses [Web Proxy Auto-Discovery Protocol](https://en.wikipedia.org/wiki/Web_Proxy_Auto-Discovery_Protocol)
