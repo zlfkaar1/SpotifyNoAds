@@ -29,7 +29,7 @@
 
 :warning: This mod is for the [**Desktop Application**](https://www.spotify.com/download/windows/) of Spotify on Windows only and **not the Microsoft Store version**.
 
-#### Installation/Update:
+### Installation/Update:
 * Just download and run [BlockTheSpot.bat](https://raw.githack.com/mrpond/BlockTheSpot/master/BlockTheSpot.bat)  
 
 or
@@ -45,15 +45,15 @@ or
 2. Download `chrome_elf.zip` from [releases](https://github.com/mrpond/BlockTheSpot/releases)
 3. Unzip and replace `chrome_elf.dll` and `config.ini` 
 
-#### Uninstall:
+### Uninstall:
 * Just run uninstall.bat
 or
 * Reinstall Spotify 
 
-#### Known Issues:  
+### Known Issues:  
 * You may face issue [#150](https://github.com/mrpond/BlockTheSpot/issues/150).    
 
-#### Additional Notes:  
+### Additional Notes:  
 * BlockTheSpot might only works as expected with the last tested version. Please check it before opening an issue.  
 * "chrome_elf.dll" gets replaced by the Spotify installer each time it updates, hence why you'll probably need to apply the patch again when it happens
 * [Spicetify](https://github.com/khanhas/spicetify-cli) users will need to reapply BlockTheSpot after applying a Spicetify patches.
