@@ -23,6 +23,11 @@ Write-Host 'Stopping Spotify...'`n
 Stop-Process -Name Spotify
 Stop-Process -Name SpotifyWebHelper
 
+if ($PSVersionTable.PSVersion.Major -ge 7)
+{
+    Import-Module Appx -UseWindowsPowerShell
+}
+
 if (Get-AppxPackage -Name SpotifyAB.SpotifyMusic) {
   Write-Host @'
 The Microsoft Store version of Spotify has been detected which is not supported.
